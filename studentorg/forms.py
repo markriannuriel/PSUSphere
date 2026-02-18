@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Organization
 
 
 class SearchForm(forms.Form):
@@ -6,3 +8,9 @@ class SearchForm(forms.Form):
         'placeholder': 'Search organizations...',
         'class': 'form-control'
     }))
+
+
+class OrganizationForm(ModelForm):
+    class Meta:
+        model = Organization
+        fields = '__all__'
