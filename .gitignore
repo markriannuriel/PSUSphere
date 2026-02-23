@@ -1,0 +1,15 @@
+# Ignore Python virtual environment
+/psusenv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# VSCode settings
+/.vscode/
