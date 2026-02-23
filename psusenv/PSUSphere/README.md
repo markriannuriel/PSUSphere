@@ -27,6 +27,8 @@ PSUSphere is a comprehensive student organization management system that enables
   - sqlparse (0.5.5) - SQL parsing
   - Faker (40.4.0) - Test data generation
   - tzdata (2025.3) - Timezone data
+  - django-allauth - Authentication & social login
+  - requests, PyJWT, cryptography - Required by allauth providers
 
 ## Getting Started
 
@@ -67,7 +69,7 @@ PSUSphere is a comprehensive student organization management system that enables
    python manage.py migrate
    ```
 
-6. Create a superuser account
+6. Create a superuser account (or use allauth URLs to register)
    ```bash
    python manage.py createsuperuser
    ```
@@ -76,6 +78,20 @@ PSUSphere is a comprehensive student organization management system that enables
    ```bash
    python manage.py create_initial_data
    ```
+
+8. Login to the site
+   - Visit `http://127.0.0.1:8000/accounts/login/`
+   - Use the superuser credentials or follow the signup link
+   - After login you will be redirected to the dashboard
+
+9. Start the development server
+   ```bash
+   python manage.py runserver
+   ```
+
+10. Access the application
+    - Admin Interface: http://127.0.0.1:8000/admin/
+    - Main site: http://127.0.0.1:8000/
 
 8. Start the development server
    ```bash

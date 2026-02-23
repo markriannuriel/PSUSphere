@@ -40,7 +40,7 @@ class HomePageView(LoginRequiredMixin, ListView):
         return context
 
 
-class OrganizationList(ListView):
+class OrganizationList(LoginRequiredMixin, ListView):
     model = Organization
     context_object_name = 'organization'
     template_name = 'org_list.html'
@@ -57,21 +57,21 @@ class OrganizationList(ListView):
         return qs
 
 
-class OrganizationCreateView(CreateView):
+class OrganizationCreateView(LoginRequiredMixin, CreateView):
     model = Organization
     form_class = OrganizationForm
     template_name = 'org_form.html'
     success_url = reverse_lazy('organization-list')
 
 
-class OrganizationUpdateView(UpdateView):
+class OrganizationUpdateView(LoginRequiredMixin, UpdateView):
     model = Organization
     form_class = OrganizationForm
     template_name = 'org_form.html'
     success_url = reverse_lazy('organization-list')
 
 
-class OrganizationDeleteView(DeleteView):
+class OrganizationDeleteView(LoginRequiredMixin, DeleteView):
     model = Organization
     template_name = 'org_del.html'
     success_url = reverse_lazy('organization-list')
@@ -92,28 +92,28 @@ class CollegeList(ListView):
         return qs
 
 
-class CollegeCreateView(CreateView):
+class CollegeCreateView(LoginRequiredMixin, CreateView):
     model = College
     form_class = CollegeForm
     template_name = 'college_form.html'
     success_url = reverse_lazy('college-list')
 
 
-class CollegeUpdateView(UpdateView):
+class CollegeUpdateView(LoginRequiredMixin, UpdateView):
     model = College
     form_class = CollegeForm
     template_name = 'college_form.html'
     success_url = reverse_lazy('college-list')
 
 
-class CollegeDeleteView(DeleteView):
+class CollegeDeleteView(LoginRequiredMixin, DeleteView):
     model = College
     template_name = 'college_del.html'
     success_url = reverse_lazy('college-list')
 
 
 # === Program CRUD ===
-class ProgramList(ListView):
+class ProgramList(LoginRequiredMixin, ListView):
     model = Program
     context_object_name = 'program'
     template_name = 'program_list.html'
@@ -137,28 +137,28 @@ class ProgramList(ListView):
         return 'prog_name'
 
 
-class ProgramCreateView(CreateView):
+class ProgramCreateView(LoginRequiredMixin, CreateView):
     model = Program
     form_class = ProgramForm
     template_name = 'program_form.html'
     success_url = reverse_lazy('program-list')
 
 
-class ProgramUpdateView(UpdateView):
+class ProgramUpdateView(LoginRequiredMixin, UpdateView):
     model = Program
     form_class = ProgramForm
     template_name = 'program_form.html'
     success_url = reverse_lazy('program-list')
 
 
-class ProgramDeleteView(DeleteView):
+class ProgramDeleteView(LoginRequiredMixin, DeleteView):
     model = Program
     template_name = 'program_del.html'
     success_url = reverse_lazy('program-list')
 
 
 # === Student CRUD ===
-class StudentList(ListView):
+class StudentList(LoginRequiredMixin, ListView):
     model = Student
     context_object_name = 'student'
     template_name = 'student_list.html'
@@ -183,28 +183,28 @@ class StudentList(ListView):
         return 'lastname'
 
 
-class StudentCreateView(CreateView):
+class StudentCreateView(LoginRequiredMixin, CreateView):
     model = Student
     form_class = StudentForm
     template_name = 'student_form.html'
     success_url = reverse_lazy('student-list')
 
 
-class StudentUpdateView(UpdateView):
+class StudentUpdateView(LoginRequiredMixin, UpdateView):
     model = Student
     form_class = StudentForm
     template_name = 'student_form.html'
     success_url = reverse_lazy('student-list')
 
 
-class StudentDeleteView(DeleteView):
+class StudentDeleteView(LoginRequiredMixin, DeleteView):
     model = Student
     template_name = 'student_del.html'
     success_url = reverse_lazy('student-list')
 
 
 # === OrgMember CRUD ===
-class OrgMemberList(ListView):
+class OrgMemberList(LoginRequiredMixin, ListView):
     model = OrgMember
     context_object_name = 'orgmember'
     template_name = 'orgmember_list.html'
@@ -229,21 +229,21 @@ class OrgMemberList(ListView):
         return '-date_joined'
 
 
-class OrgMemberCreateView(CreateView):
+class OrgMemberCreateView(LoginRequiredMixin, CreateView):
     model = OrgMember
     form_class = OrgMemberForm
     template_name = 'orgmember_form.html'
     success_url = reverse_lazy('orgmember-list')
 
 
-class OrgMemberUpdateView(UpdateView):
+class OrgMemberUpdateView(LoginRequiredMixin, UpdateView):
     model = OrgMember
     form_class = OrgMemberForm
     template_name = 'orgmember_form.html'
     success_url = reverse_lazy('orgmember-list')
 
 
-class OrgMemberDeleteView(DeleteView):
+class OrgMemberDeleteView(LoginRequiredMixin, DeleteView):
     model = OrgMember
     template_name = 'orgmember_del.html'
     success_url = reverse_lazy('orgmember-list')
