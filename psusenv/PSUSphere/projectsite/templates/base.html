@@ -151,7 +151,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="/orgmembers/">
+						<a href="{% url 'orgmember-list' %}">
 							<i class="la la-user"></i>
 							<p>Org. Members</p>
 						</a>
@@ -164,7 +164,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="/students/">
+						<a href="{% url 'student-list' %}">
 							<i class="la la-graduation-cap"></i>
 							<p>Student</p>
 						</a>
@@ -177,11 +177,17 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="/colleges/">
+						<a href="{% url 'college-list' %}">
 							<i class="la la-university"></i>
 							<p>College</p>
 						</a>
 					</li>
+                    <li class="nav-item">
+                        <a href="{% url 'program-list' %}">
+                            <i class="la la-book"></i>
+                            <p>Program</p>
+                        </a>
+                    </li>
 					<li class="nav-item">
 						<a href="/icons/">
 							<i class="la la-fonticons"></i>
