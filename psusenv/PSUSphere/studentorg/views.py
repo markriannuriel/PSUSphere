@@ -19,6 +19,17 @@ class HomePageView(ListView):
     template_name = 'home.html'
     paginate_by = 10
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # add dashboard statistics
+        context['college_count'] = College.objects.count()
+        context['program_count'] = Program.objects.count()
+        context['organization_count'] = Organization.objects.count()
+        context['student_count'] = Student.objects.count()
+        # optionally include members count
+        context['member_count'] = OrgMember.objects.count()
+        return context
+
 
 class OrganizationList(ListView):
     model = Organization
